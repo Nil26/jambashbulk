@@ -60,4 +60,4 @@ $(dll_win32): $(srcfiles) $(allheaders) | $(bin)
 
 # dll to work from python
 $(dll): $(srcfiles) $(allheaders) | $(bin)
-	g++ -fPIC -shared -Wl,-soname,$(dllname) $(o3pts) -o $(dll) $(srcfiles)
+	g++ -fPIC -shared -Wl,-install_name,$(dllname) $(o3pts) -o $(dll) $(srcfiles)
