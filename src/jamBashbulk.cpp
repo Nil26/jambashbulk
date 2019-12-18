@@ -2467,7 +2467,7 @@ void readPositionFile()
 
     LDBL L1x = 0.0, L1y = 0.0, L2x = 0.0, L2y = 0.0;
     // L1y is not used currently; suppress warning about this
-    L1y = L1y;
+    // L1y = L1y;
 
     ifstream infile;
 

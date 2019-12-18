@@ -12,7 +12,8 @@ typedef double LDBL;
 #define PLATFORM "win64"
 typedef double LDBL;
 #endif
-#ifdef __unix__
+//#ifdef __unix__
+#ifdef __APPLE__
 #define PLATFORM "unix"
 typedef long double LDBL;
 #endif
@@ -21,7 +22,7 @@ std::string header() {
   std::stringstream sstm;
 
   sstm << "# " __BASE_FILE__ " (" PLATFORM ") \n"
-       << "# commit " GIT_HEAD " ";
+    << "# commit " GIT_HEAD " ";
 
   if (GIT_CHANGED_FILES) {
     sstm << "+" << GIT_CHANGED_FILES << " ";
@@ -31,7 +32,7 @@ std::string header() {
 
   srand(0);
   sstm << "# RAND_MAX = " << RAND_MAX << "\n"
-       << "# srand(0); rand() = " << rand() << "\n";
+    << "# srand(0); rand() = " << rand() << "\n";
 
   return sstm.str();
 }
